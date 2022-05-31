@@ -1,9 +1,8 @@
 package br.com.surb.gamesearch.modules.record.dto;
 
-import br.com.surb.gamesearch.modules.game.infra.jpa.entities.Game;
 import br.com.surb.gamesearch.modules.record.jpa.entities.Record;
+import br.com.surb.gamesearch.shared.enums.EnumPlatform;
 
-import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
@@ -15,25 +14,36 @@ public class RecordDTO implements Serializable {
   private Long id;
   private String name;
   private Integer age;
+  private String gameTitle;
+  private EnumPlatform gamePlatform;
+  private String genreName;
   private Instant createdAt;
-  private Game game;
+//  private Instant updatedAt;
+
 
   public RecordDTO(){}
 
-  public RecordDTO(Long id, String name, Integer age, Instant createdAt, Game game) {
-    this.id = id;
-    this.name = name;
-    this.age = age;
-    this.createdAt = createdAt;
-    this.game = game;
-  }
+//  public RecordDTO(Long id, String name, Integer age, String gameTitle, EnumPlatform gamePlatform, String genreName,
+//                   Instant createdAt) {
+//    this.id = id;
+//    this.name = name;
+//    this.age = age;
+//    this.gameTitle = gameTitle;
+//    this.gamePlatform = gamePlatform;
+//    this.genreName = genreName;
+//    this.createdAt = createdAt;
+//  }
 
   public RecordDTO(Record record){
     id = record.getId();
     name = record.getName();
     age = record.getAge();
+    gameTitle = record.getGame().getTitle();
+    gamePlatform = record.getGame().getPlatform();
+    genreName = record.getGame().getGenre().getName();
     createdAt = record.getCreatedAt();
-    game = record.getGame();
+//    updatedAt = record.getUpdatedAt();
+
   }
 
   public Long getId() {
@@ -68,11 +78,28 @@ public class RecordDTO implements Serializable {
     this.createdAt = createdAt;
   }
 
-  public Game getGame() {
-    return game;
+  public String getGameTitle() {
+    return gameTitle;
   }
 
-  public void setGame(Game game) {
-    this.game = game;
+  public void setGameTitle(String gameTitle) {
+    this.gameTitle = gameTitle;
   }
+
+  public EnumPlatform getGamePlatform() {
+    return gamePlatform;
+  }
+
+  public void setGamePlatform(EnumPlatform gamePlatform) {
+    this.gamePlatform = gamePlatform;
+  }
+
+  public String getGenreName() {
+    return genreName;
+  }
+
+  public void setGenreName(String genreName) {
+    this.genreName = genreName;
+  }
+
 }

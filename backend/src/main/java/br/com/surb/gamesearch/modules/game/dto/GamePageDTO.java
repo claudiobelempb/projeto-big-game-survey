@@ -24,6 +24,10 @@ public class GamePageDTO extends GameDTO implements Serializable {
     super(id, title, platform);
     this.genre = genre;
   }
+  public GamePageDTO(Game game) {
+    super(game);
+//    game.getRecords().forEach(record -> this.records.add(new RecordDTO(record)));
+  }
 
   public GamePageDTO(Game game, Genre genre) {
     super(game);
