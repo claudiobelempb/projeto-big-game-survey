@@ -11,12 +11,12 @@ import java.time.Instant;
 
 @Repository
 public interface RecordRepository extends JpaRepository<Record, Long> {
-  @Query("SELECT obj FROM Record obj WHERE " +
-    "(:min IS NULL OR obj.createdAt >= :min) AND " +
-    "(:max IS NULL OR obj.createdAt <= :max)")
-  Page<Record> findAllDatePage(Instant min, Instant max, Pageable pageable);
 //  @Query("SELECT obj FROM Record obj WHERE " +
-//    "(COALESCE(:min, NULL) IS NULL OR obj.createdAt >= :min) AND " +
-//    "(COALESCE(:max, NULL) IS NULL OR obj.createdAt <= :max)")
+//    "(:min IS NULL OR obj.createdAt >= :min) AND " +
+//    "(:max IS NULL OR obj.createdAt <= :max)")
 //  Page<Record> findAllDatePage(Instant min, Instant max, Pageable pageable);
+  @Query("SELECT obj FROM Record obj WHERE " +
+    "(COALESCE(:min, NULL) IS NULL OR obj.createdAt >= :min) AND " +
+    "(COALESCE(:max, NULL) IS NULL OR obj.createdAt <= :max)")
+  Page<Record> findAllDatePage(Instant min, Instant max, Pageable pageable);
 }
