@@ -1,0 +1,50 @@
+.filters__container {
+  background-color: var(--color-darkslategray);
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 15px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.filters__container input {
+  height: 44px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #9E9E9E;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  padding-left: 15px;
+}
+
+.filters__container input:focus {
+  outline: none;
+}
+
+.filters__container button {
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 13px 60px;
+}
+
+.filters__container .clean__filters {
+  background-color: var(--color-coral);
+  color: #FFF;
+  margin-left: 20px;
+}
+
+.filters__container .clean__filters:hover {
+  background-color: #e07243;
+}
+
+.filters__container .action__filters {
+  background-color: var(--color-turquoise);
+  color: #0E1B28;
+}
+
+.filters__container .action__filters:hover {
+  background-color: #04c7ef;
+}

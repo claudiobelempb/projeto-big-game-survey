@@ -1,0 +1,55 @@
+.records__container {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+.filters__container.records__actions {
+  justify-content: flex-end;
+}
+ 
+.records__table {
+  width: 100%;
+  border-bottom: 10px solid var(--color-turquoise);
+  border-top: 10px solid var(--color-turquoise);
+  border-radius: 10px;
+}
+
+.records__table thead {
+  background-color: var(--color-turquoise);
+  text-align: left;
+  color: #0E1B28;
+  border-radius: 10px;
+}
+
+.records__table thead tr {
+  height: 50px;
+}
+
+.records__table thead th:first-child {
+  padding-left: 50px;
+  border-top-left-radius: 10px;
+}
+
+.records__table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.records__table tbody td:first-child {
+  padding-left: 50px;
+}
+
+.records__table tbody tr {
+  height: 45px;
+  color: #FFF;
+  font-size: 18px;
+}
+
+.records__table tbody tr:nth-child(odd) {
+  background-color: var(--color-darkslategray);
+}
+
+.records__table tbody tr:nth-child(even) {
+  background-color: var(--color-dimgray);
+}
